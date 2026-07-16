@@ -1,0 +1,84 @@
+name: Temporary interview transcription
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  transcribe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: temporary-interview-transcription
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          python -m pip install --upgrade pip
+          pip install faster-whisper
+
+      - name: Download and validate audio
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p audio transcripts status
+          curl -L --fail --retry 5 'https://at.adobe.com/rEMgGP2YbHO9R0zV' -o audio/darya.mp3
+          curl -L --fail --retry 5 'https://at.adobe.com/68azpp1QTcWDzcdw' -o audio/tatiana.mp3
+          curl -L --fail --retry 5 'https://at.adobe.com/1TU2sbQxeWZCYHgR' -o audio/anna.mp3
+          curl -L --fail --retry 5 'https://at.adobe.com/q2qCi44eDXO4RbqG' -o audio/new_project.mp3
+          curl -L --fail --retry 5 'https://at.adobe.com/t4qBBLAo0QLEf7FV' -o audio/new_project_3.mp3
+          for f in audio/*.mp3; do
+            test -s "$f"
+            ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "$f"
+          done
+          echo 'downloaded and validated' > status/download-ok.txt
+          git config user.name 'interview-transcription-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add status/download-ok.txt
+          git commit -m 'Confirm temporary audio download' || true
+          git push origin HEAD:temporary-interview-transcription
+
+      - name: Transcribe Russian speech
+        run: |
+          cat > /tmp/transcribe.py <<'PY'
+          from faster_whisper import WhisperModel
+          from pathlib import Path
+          import json, subprocess
+
+          model = WhisperModel('tiny', device='cpu', compute_type='int8')
+          out_dir = Path('transcripts')
+          ordered = ['darya', 'tatiana', 'anna', 'new_project_3', 'new_project']
+          for name in ordered:
+              audio = Path('audio') / f'{name}.mp3'
+              segments, info = model.transcribe(
+                  str(audio), language='ru', beam_size=5,
+                  vad_filter=True,
+                  vad_parameters=dict(min_silence_duration_ms=500),
+                  condition_on_previous_text=True,
+              )
+              rows, texts = [], []
+              for seg in segments:
+                  text = seg.text.strip()
+                  if not text:
+                      continue
+                  rows.append({'start': round(seg.start, 2), 'end': round(seg.end, 2), 'text': text})
+                  texts.append(f'[{seg.start:08.2f} - {seg.end:08.2f}] {text}')
+              (out_dir / f'{name}.txt').write_text('\n'.join(texts), encoding='utf-8')
+              (out_dir / f'{name}.json').write_text(json.dumps({'language': info.language, 'duration': info.duration, 'segments': rows}, ensure_ascii=False, indent=2), encoding='utf-8')
+              subprocess.run(['git', 'add', str(out_dir / f'{name}.txt'), str(out_dir / f'{name}.json')], check=True)
+              subprocess.run(['git', 'commit', '-m', f'Add temporary transcript: {name}'], check=False)
+              subprocess.run(['git', 'push', 'origin', 'HEAD:temporary-interview-transcription'], check=True)
+          PY
+          python /tmp/transcribe.py
