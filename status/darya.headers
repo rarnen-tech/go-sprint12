@@ -1,0 +1,24 @@
+HTTP/2 301 
+date: Thu, 16 Jul 2026 23:55:14 GMT
+content-length: 0
+request-id: b0a7e21f-e0d7-4f41-9c92-5802be665c4f
+location: https://acp-aep-cs-blobstore-prod-jpn3-data.adobe.io/f2045613-92ca-4f31-8cd3-a3dae79c8424?response-content-disposition=attachment%3B%20filename%3D%22darya.mp3%22&response-content-type=audio%2Fmpeg&x-user-client-id=oai-for-creatives-prod&x-region=jpn3&x-version-id=2&x-partition-prefix=b929d01708fa031ac7229e8e1769629e8d38e8dc41ee6c2c4d63354042dda0e2&x-resource-length=1593441&x-resource-id=c15983640fac0e1adf5de8dd477c64908f4ff18444cf69376b15631810ded8944baac320&x-key-id=BN5JZ&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEID%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDmFwLW5vcnRoZWFzdC0xIkcwRQIhAOyb%2Fp7m25lStixPYfUW7pUl%2BfbHy5cu8gNN2VEPzfm%2FAiB4vfO366uExA83Yl2eDBg3ym%2FGHJExRlj2uiwuDMZRzirrAQhJEAIaDDc2Njk2OTg0NDA3OCIMQbui5euOznPOIIb0KsgBojGnUE%2BruVsomnS7zhg4kf6tilJuvucYxTbuiiK7OyuAz94sIHr3iv7wpDjiJGxhK%2BkZCN%2BaUROtxAMIpiWj9LnXLf%2FGhA3frbTBpRRNL4tkpHMSf2lBIkC87yVDkdqeMghUFQ1kfkX0jdZXjQ0mf9OzcY99%2FdmtTUnx%2FAuu4OWZ0XhUeZmQ9Nt3tRAAvhJNexiytkdpVmp1g2dTcQZuIi2aT1fF%2FDu304CfCO0qflxBZ%2FyFIWeoGZgqiTiztCSL2MgOdwew7Tswsf7j0gY6mAEeX67n%2FHxYlwR%2B3iOKALLgrLrcdqFzaBD0l6qb%2FJI8J%2BecGJ28rr2H9WHU%2FbYnwURe6w14n1BH8AC8eksP0ZvaBseZvlmmUcP5n6VvNWngGxlLf%2FnWzhVOPooyluoX%2BEPXzjIMjh5dbvojgJOraU7j6GakBltlfmyiZdPH36U25xPCS%2FTgSZ125VDMODXAdFKJpklIK7E47Q%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20260716T161846Z&X-Amz-SignedHeaders=host&X-Amz-Credential=ASIA3FEXXCFXL5EE2GEX%2F20260716%2Fap-northeast-1%2Fs3%2Faws4_request&X-Amz-Expires=14400&X-Amz-Signature=1e403ffa1fe03c4daba70b85eaef69a5870e2cab8c8f557ae118c5b8b05b5b00
+access-control-allow-origin: *
+x-xss-protection: 1; mode=block
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+referrer-policy: no-referrer
+server: adobe
+
+HTTP/1.1 403 Forbidden
+Content-Type: application/xml
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: AmazonS3
+Date: Thu, 16 Jul 2026 23:55:14 GMT
+X-Cache: Error from cloudfront
+Via: 1.1 62c27224785ce0e5201a4eab3d49262e.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: JFK50-P7
+X-Amz-Cf-Id: 8Q0SgYtUNnL19Uz29xELetIXQX2uW4tH3kM-kfo9F2lgfQhMlXlYZQ==
+

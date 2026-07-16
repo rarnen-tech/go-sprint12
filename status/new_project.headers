@@ -1,0 +1,24 @@
+HTTP/2 301 
+date: Thu, 16 Jul 2026 23:55:15 GMT
+content-length: 0
+request-id: 1f23736f-f47c-4114-8f5f-6477197e8dd6
+location: https://acp-aep-cs-blobstore-prod-jpn3-data.adobe.io/fc1442b0-9e10-4228-9a02-ea3ce49ae751?response-content-disposition=attachment%3B%20filename%3D%22new_project.mp3%22&response-content-type=audio%2Fmpeg&x-user-client-id=oai-for-creatives-prod&x-region=jpn3&x-version-id=2&x-partition-prefix=11f2e2385d3012052cea23ef396cea01bcd90810882ee4a98e48029e73451de6&x-resource-length=5112615&x-resource-id=6185eb1c0d31185734c802e83a79ec03b9af1110855de1b2ff6802c2734235957bc53981&x-key-id=BN5JZ&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEID%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDmFwLW5vcnRoZWFzdC0xIkcwRQIgKqXCZpFoAlW8k4HK%2F7SaN26e0PGC3WenTVDNhP8NFz8CIQCEaeCP5xOGbixKgGe0p1UUZDvSPlBERC1JTufNLlBstyrrAQhJEAIaDDc2Njk2OTg0NDA3OCIMpnUrOsQNYbRqjY8KKsgB0m2DwPdWdHy2ZTYAM12NKfoBUAgxWthVScWKWCuTioMZL2ymoexu0YSODzTSa8QkvsYsV40G2mS%2FBimJVVTXrqyA%2BzSuQWR1aBeAfyVws%2Fe6Ou%2BdBz%2FHHUH2tZH59Ky90I9pcJpbsMSAeBwEbXKRtMfpG%2BbkrfhLofKxGpUVeWPykUnvHZjujSrZrJSBWjvFkur2xheLluHGlOBtPKRPvDggFzffuBcuZXCd%2BHpgVwkmTeIfBUcHAuydpb5aLkTTtAUpRLNVivAw0Ijk0gY6mAGjP1ftgltZN5iDsG7LsQmoquEJFDjX8lPz5zyuMOtBwItaReNCUuh1v12MEmzV7G3R6rPbOUYV0UpgkEllIqyB3jNbNryDtW8%2BZifig3lAqx1IDwSGmcXvarv%2FhM5B50k9dXzxXf6R33EpZdXB%2BgPMem0v9bmK3ozjYdOFFDaN5qBAKcpOUyIOwOIesyzJJdlvsVz1DvnmSw%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20260716T162359Z&X-Amz-SignedHeaders=host&X-Amz-Credential=ASIA3FEXXCFXN5F3NG4R%2F20260716%2Fap-northeast-1%2Fs3%2Faws4_request&X-Amz-Expires=14400&X-Amz-Signature=b9a5bf90ba805bd8e4cc557b3ec726a4bbdda0493c064921ccebfbe26011ef69
+access-control-allow-origin: *
+x-xss-protection: 1; mode=block
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+referrer-policy: no-referrer
+server: adobe
+
+HTTP/1.1 403 Forbidden
+Content-Type: application/xml
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: AmazonS3
+Date: Thu, 16 Jul 2026 23:55:15 GMT
+X-Cache: Error from cloudfront
+Via: 1.1 16af463a01c5a83f3019835cbbb82152.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: JFK50-P7
+X-Amz-Cf-Id: H0V6d_kxCFA1Hhtkjun49dPnWGj2vHI0ZPYDBmUFpnFTI7Adj4S_ew==
+
