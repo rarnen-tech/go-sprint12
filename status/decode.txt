@@ -1,0 +1,9 @@
+b64_size=23218
+eff4f6ee2d5f565f26f9d6ec2508e5e383db94c7ad7c3df3be6893233991d05e  audio/darya.b64
+base64: invalid input
+base64_exit=1
+ogg_size=17412
+25e38a837c5efe8abd14795ef9cf342291f6f89d26fd1014b0d397b7a0566f30  audio/darya_fast.ogg
+audio/darya_fast.ogg: Ogg data, Opus audio, version 0.1, mono, 8000 Hz (Input Sample Rate)
+/home/runner/work/_temp/1c73e780-2981-4db3-b54f-9630c221d7bf.sh: line 13: ffprobe: command not found
+ffprobe_exit=127
